@@ -1,16 +1,25 @@
+
+import { FormContact } from "./FormContact/FotmContact";
+import { Contacts } from "./Contacts/Contacts";
+import "@fontsource/rajdhani";
+import { useEffect } from "react";
+import { fatchContacts } from "Redux/operations";
+import { useDispatch } from "react-redux";
+
+
 export const App = () => {
+
+  const dispatch = useDispatch()
+  useEffect(() => {dispatch(fatchContacts())},[dispatch])
+
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
+    <div style={{fontSize: 40,}}>
+      <h2>Phonebook</h2> 
+        <FormContact 
+        />
+      <h3>Contacts</h3>
+        <Contacts 
+      />
     </div>
   );
-};
+}
