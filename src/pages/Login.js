@@ -1,5 +1,8 @@
 import { Button } from "components/ListContacts/ListContacts.styled";
 import { Formik, Form, Field, ErrorMessage } from "formik";
+import { useDispatch } from "react-redux";
+import { logIn } from "Redux/auth/operation";
+
 import * as Yup from 'yup';
 
 const schema = Yup.object().shape({
@@ -10,8 +13,11 @@ const schema = Yup.object().shape({
 
 export const Login = () => {
 
+
+  const dispatch = useDispatch();
   const handleSubmit = (value, {resetForm}) => {
     console.log(value)
+    dispatch(logIn)
     resetForm()
   }
 
