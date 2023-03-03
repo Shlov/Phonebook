@@ -6,11 +6,12 @@ import { NavLink, Outlet } from "react-router-dom";
 import {
   Container,
 } from "@chakra-ui/react";
+import { UserMenu } from "components/UserMenu/UserMenu";
 
 export const Layout = () => {
 
   return (
-    <Container>
+    <Container maxW="container.sm" my={{ base: 0, md: 8 }}>
       <header>
         <nav>
           <NavLink to="/">Home</NavLink>
@@ -18,6 +19,7 @@ export const Layout = () => {
           <NavLink to="/login">Login</NavLink>
           <NavLink to="/register">Register</NavLink>
         </nav>
+        <UserMenu/>
       </header>
       <Toaster />
       <Suspense fallback={<Loader/>}>
