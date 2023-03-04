@@ -3,7 +3,7 @@ import { FormContact } from "../components/FormContact/FotmContact";
 import { ListContacts } from "../components/ListContacts/ListContacts";
 import { SearchContact } from "../components/SearchContact/SearchContact";
 import { useEffect } from "react";
-import { fatchContacts } from "Redux/operations";
+import { fatchContacts } from "Redux/contacts/operations";
 import { useDispatch } from "react-redux";
 
 export const Contacts = () => {

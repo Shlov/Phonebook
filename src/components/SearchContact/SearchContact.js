@@ -1,4 +1,4 @@
-import { setFilter } from "Redux/filterSlice";
+import { setFilter } from "Redux/contacts/filterSlice";
 import { useDispatch } from "react-redux"
 import { Input, Label } from "./SearchContact.styled"
 

@@ -3,8 +3,8 @@ import { useState } from "react";
 import { Input , Label, Form} from "./FormContact.styled";
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from "react-redux";
-import { addContact } from "Redux/operations";
-import { getContacts } from "Redux/selectors";
+import { addContact } from "Redux/contacts/operations";
+import { getContacts } from "Redux/contacts/selectors";
 
 export const FormContact = () => {
 
