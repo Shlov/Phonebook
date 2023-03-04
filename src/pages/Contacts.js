@@ -14,7 +14,7 @@ export const Contacts = () => {
   return (
     <>
       <h2>Contacts</h2>
-      <div style={{fontSize: 40,}}>
+      <div>
         <h2>Phonebook</h2> 
         <FormContact />
         <h3>Contacts</h3>
