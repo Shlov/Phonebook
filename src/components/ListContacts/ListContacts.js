@@ -11,7 +11,7 @@ export const ListContacts = () => {
   const filter = useSelector(getFilter).query;
   const isLoading = useSelector(getIsLoading);
   const dispatch = useDispatch();
-  console.log(isLoading)
+  // console.log(isLoading)
 
   const contacts = contactsState.filter(({name}) => name.toLowerCase().includes(filter.toLowerCase()))
 

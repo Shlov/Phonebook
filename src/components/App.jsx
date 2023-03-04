@@ -10,6 +10,8 @@ import { Layout } from "./Layout/Layout";
 import { Register } from "pages/Register";
 import { Login } from "pages/Login";
 import { refreshUser } from "Redux/auth/operation";
+import { PrivateRoute } from "./PrivateRoute";
+import { RestrictedRoute } from "./RestrictedRoute";
 
 
 
@@ -24,9 +26,22 @@ export const App = () => {
     <Routes>
       <Route path="/" element={<Layout/>}>
         <Route index element={<Home />}/>
-        <Route path="/contacts" element={<Contacts/>} />
-        <Route path="/login" element={<Login/>} />
-        <Route path="/register" element={<Register/>} />
+        {/* <Route path="/contacts" element={<Contacts/>} /> */}
+        {/* <PrivateRoute path="/contacts">
+          <Contacts/>
+        </PrivateRoute> */}
+        <Route path="/contacts" element={
+          <PrivateRoute redirectTo="/login" component={<Contacts/>}/>
+        }/>
+        <Route path="/login" element={
+          <RestrictedRoute redirectTo="/contacts" component={<Login/>}/>
+        }/>
+        <Route path="/register" element={
+          <RestrictedRoute redirectTo="/contacts" component={<Register/>}/>
+        }/>
+
+        {/* <Route path="/login" element={<Login/>} /> */}
+        {/* <Route path="/register" element={<Register/>} /> */}
       </Route>
     </Routes>
   );
