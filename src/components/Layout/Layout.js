@@ -9,7 +9,7 @@ import {
 import { UserMenu } from "components/UserMenu/UserMenu";
 import { AuthNav } from "components/AuthNav/AuthNav";
 import { useSelector } from "react-redux";
-import { selectIsLoggedIn, selectIsRefreshing } from "Redux/auth/selector";
+import { selectIsLoggedIn } from "Redux/auth/selector";
 
 export const Layout = () => {
 
