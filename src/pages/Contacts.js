@@ -8,7 +8,7 @@ import { useDispatch } from "react-redux";
 
 export const Contacts = () => {
 
-  const [isEditedSt, setIsEditedSt] = useState({name: 'Test', number: '0000'});
+  const [isEditedSt, setIsEditedSt] = useState(null);
 
   const newEditContact = (contact) => {
     setIsEditedSt(contact)
@@ -22,7 +22,7 @@ export const Contacts = () => {
       <h2>Contacts</h2>
       <div>
         <h2>Phonebook</h2> 
-        <FormContact editedSt={isEditedSt}/>
+        <FormContact editedSt={isEditedSt} onEdit={newEditContact}/>
         <h3>Contacts</h3>
         <SearchContact />
         <ListContacts onEdit={newEditContact}/>

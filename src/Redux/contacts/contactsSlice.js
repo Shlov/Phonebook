@@ -4,7 +4,7 @@ import { fatchContacts, addContact, deleteContact, replaceContact } from "./oper
 const contactsInitialState = { 
   items: [],
   isLoading: false,
-  isEdited: null,
+  // isEdited: null,
   error: null,
 };
 
@@ -20,11 +20,11 @@ const contactsSlice = createSlice({
   name: 'contacts',
   initialState: contactsInitialState,
 
-  reducers:{
-    editContact(state, action) {
-      state.isEdited = action.payload;
-    },
-  },
+  // reducers:{
+  //   editContact(state, action) {
+  //     state.isEdited = action.payload;
+  //   },
+  // },
 
   extraReducers:{
     [fatchContacts.pending]: handlePending,
