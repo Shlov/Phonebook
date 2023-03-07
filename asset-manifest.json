@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/goit-react-hw-08-phonebook/static/css/main.ef99310c.css",
-    "main.js": "/goit-react-hw-08-phonebook/static/js/main.f3ad8d35.js",
+    "main.css": "/goit-react-hw-08-phonebook/static/css/main.86fc7962.css",
+    "main.js": "/goit-react-hw-08-phonebook/static/js/main.a79e0601.js",
     "static/media/rajdhani-all-400-normal.woff": "/goit-react-hw-08-phonebook/static/media/rajdhani-all-400-normal.69448587a2c53b0a21ed.woff",
     "static/media/rajdhani-devanagari-400-normal.woff2": "/goit-react-hw-08-phonebook/static/media/rajdhani-devanagari-400-normal.6c9e66e639fb808aad84.woff2",
     "static/media/rajdhani-latin-400-normal.woff2": "/goit-react-hw-08-phonebook/static/media/rajdhani-latin-400-normal.7a7983e943008b42789d.woff2",
     "static/media/rajdhani-latin-ext-400-normal.woff2": "/goit-react-hw-08-phonebook/static/media/rajdhani-latin-ext-400-normal.d920ea8ee9c011bae86d.woff2",
     "index.html": "/goit-react-hw-08-phonebook/index.html",
-    "main.ef99310c.css.map": "/goit-react-hw-08-phonebook/static/css/main.ef99310c.css.map",
-    "main.f3ad8d35.js.map": "/goit-react-hw-08-phonebook/static/js/main.f3ad8d35.js.map"
+    "main.86fc7962.css.map": "/goit-react-hw-08-phonebook/static/css/main.86fc7962.css.map",
+    "main.a79e0601.js.map": "/goit-react-hw-08-phonebook/static/js/main.a79e0601.js.map"
   },
   "entrypoints": [
-    "static/css/main.ef99310c.css",
-    "static/js/main.f3ad8d35.js"
+    "static/css/main.86fc7962.css",
+    "static/js/main.a79e0601.js"
   ]
 }
