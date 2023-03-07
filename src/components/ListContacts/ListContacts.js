@@ -26,13 +26,13 @@ export const ListContacts = ({onEdit}) => {
               {contacts.map(contact =>
               <Tr key = {contact.id}>
                 <Td>
-                  <Avatar name={contact.name} bg='teal.500' size='sm' color='gray.800' />
+                  <Avatar name={contact.name} bg='purple.700' size='sm' color='gray.50' />
                 </Td>
                 <Td >
-                  <Text>{contact.name}</Text>
+                  <Text fontSize='xl'>{contact.name}</Text>
                 </Td>
                 <Td>
-                  <Text>{contact.number}</Text> 
+                  <Text fontSize='xl'>{contact.number}</Text> 
                 </Td>
                 <Td isNumeric>
                   <Button onClick = {() => onEdit(contact)}>Edit</Button>

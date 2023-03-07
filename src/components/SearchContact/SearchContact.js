@@ -1,7 +1,7 @@
 import { setFilter } from "Redux/contacts/filterSlice";
 import { useDispatch } from "react-redux"
 import { Input, Label } from "./SearchContact.styled"
-import { Card, Flex, CardBody } from "@chakra-ui/react";
+import { Card, Flex, CardBody, Text } from "@chakra-ui/react";
 
 
 
@@ -14,7 +14,8 @@ export const SearchContact = () => {
       <CardBody>
   <Flex as={Label} alignItems='center'>
     {/* <Label htmlFor=""> */}
-      Find contacts by name
+    <Text fontSize='2xl' as='b'>Find contacts by name</Text>
+      
       <Input
         onChange={(evnt) => {dispatch(setFilter(evnt.target.value))}}
         type="text" 

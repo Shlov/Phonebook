@@ -69,7 +69,7 @@ export const FormContact = ({editedSt, onEdit}) => {
       <CardBody>
         <Form action="" onSubmit = {(e) => transferContact(e)}>
           <Flex as='label' alignItems='center'>
-            <Text>Name</Text>
+            <Text fontSize='2xl' as='b'>Name</Text>
             <Input
             onChange = {(e) => recordName(e)}
             type="text"
@@ -81,7 +81,7 @@ export const FormContact = ({editedSt, onEdit}) => {
             />
           </Flex>
           <Flex as='label' alignItems='center'>
-            Number
+            <Text fontSize='2xl' as='b'>Number</Text>
             <Input
               onChange = {(e) => recordNumber(e)}
               type="tel"

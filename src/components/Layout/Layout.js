@@ -21,14 +21,14 @@ export const Layout = () => {
   return (
     <>
       <Box as='header'>
-        <Container maxW="container.lg" bg='purple.50'>
-          <Flex justifyContent='space-between' alignItems='center'>
+        <Container maxW="container.lg" bg='purple.50' h='60px' display='flex' justifyContent='space-between' alignItems='center'>
+          {/* <Flex justifyContent='space-between' alignItems='center'> */}
             <nav>
               <NavLink to="/">Home</NavLink>
               {isLoggedIn && <NavLink to="/contacts">Contacts</NavLink>}
             </nav>
             {isLoggedIn ? <UserMenu/> : <AuthNav/>}
-          </Flex>
+          {/* </Flex> */}
         </Container>
       </Box>
       <Toaster />
