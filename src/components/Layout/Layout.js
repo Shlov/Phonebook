@@ -21,7 +21,7 @@ export const Layout = () => {
   return (
     <>
       <Box as='header'>
-        <Container maxW="container.lg" >
+        <Container maxW="container.lg" bg='purple.50'>
           <Flex justifyContent='space-between' alignItems='center'>
             <nav>
               <NavLink to="/">Home</NavLink>

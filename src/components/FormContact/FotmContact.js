@@ -5,6 +5,7 @@ import { Input , Label, Form} from "./FormContact.styled";
 import { useDispatch, useSelector } from "react-redux";
 import { addContact, replaceContact } from "Redux/contacts/operations";
 import { getContacts } from "Redux/contacts/selectors";
+import { Flex, Text, Card, CardBody } from '@chakra-ui/react';
 
 
 export const FormContact = ({editedSt, onEdit}) => {
@@ -65,9 +66,12 @@ export const FormContact = ({editedSt, onEdit}) => {
   }
 
   return (
+    // <Flex as='Form' alignItems='center' action="" onSubmit = {(e) => transferContact(e)}>
+      <Card>
+      <CardBody>
     <Form action="" onSubmit = {(e) => transferContact(e)}>
-      <Label>
-        Name
+      <Flex as='label' alignItems='center'>
+        <Text>Name</Text>
         <Input
         onChange = {(e) => recordName(e)}
         type="text"
@@ -77,8 +81,8 @@ export const FormContact = ({editedSt, onEdit}) => {
         title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
         required
         />
-      </Label>
-      <Label htmlFor="">
+      </Flex>
+      <Flex as='label' alignItems='center'>
         Number
         <Input
           onChange = {(e) => recordNumber(e)}
@@ -88,12 +92,15 @@ export const FormContact = ({editedSt, onEdit}) => {
           pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
           title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
           required
-        />
-      </Label>
+          />
+      </Flex>
       <Button type="submit" >
         {editedSt ? 'Edit contact' : 'Add contact'}
       </Button>
     </Form>
+    </CardBody>
+</Card>
+    // </Flex>
   )
 }
 
