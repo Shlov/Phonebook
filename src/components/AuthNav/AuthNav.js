@@ -1,7 +1,7 @@
 // import { Flex } from "@chakra-ui/react";
 import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
-import { Breadcrumb,  BreadcrumbItem,  BreadcrumbLink } from '@chakra-ui/react'
+import { Breadcrumb,  BreadcrumbItem,  BreadcrumbLink, Text } from '@chakra-ui/react'
 
 export const AuthNav = () => {
 
@@ -18,12 +18,12 @@ export const AuthNav = () => {
   <Breadcrumb separator='(≖_≖ )'>
     <BreadcrumbItem  isCurrentPage={location.pathname === '/login'} >
       <BreadcrumbLink as={Link} to='/login'>
-        Login
+        <Text fontSize='xl'>Login</Text>
       </BreadcrumbLink>
     </BreadcrumbItem>
     <BreadcrumbItem isCurrentPage={location.pathname === '/register'}>
       <BreadcrumbLink as={Link} to='/register'>
-        Register
+      <Text fontSize='xl'>Register</Text>
       </BreadcrumbLink>
     </BreadcrumbItem>
   </Breadcrumb>

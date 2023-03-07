@@ -3,7 +3,7 @@ import { Button } from '../Button/Button';
 import { useDispatch, useSelector } from "react-redux";
 import { logOut } from "Redux/auth/operation";
 import { selectUser } from "Redux/auth/selector";
-import { Flex } from "@chakra-ui/react";
+import { Flex, Text } from "@chakra-ui/react";
 
 
 
@@ -15,7 +15,7 @@ export const UserMenu = () => {
 
   return (
     <Flex as='nav' alignItems='center'>
-      <p>Hello, {user.name} ✌(•◡•)</p>
+      <Text fontSize='xl'>Hello, {user.name} ✌(•◡•)</Text>
       <Button onClick={()=>dispatch(logOut())}>Logout</Button>
     </Flex>
   )
