@@ -4,7 +4,8 @@ import { Toaster } from "react-hot-toast";
 import { NavLink, Outlet } from "react-router-dom";
 
 import {
-  Container,
+  Box,
+  Container, Flex, Center, 
 } from "@chakra-ui/react";
 import { UserMenu } from "components/UserMenu/UserMenu";
 import { AuthNav } from "components/AuthNav/AuthNav";
@@ -18,22 +19,33 @@ export const Layout = () => {
   // console.log(isLoggedIn)
 
   return (
-    <Container maxW="container.sm" my={{ base: 0, md: 8 }}>
-      <header>
-        <nav>
-          <NavLink to="/">Home</NavLink>
-          {isLoggedIn && <NavLink to="/contacts">Contacts</NavLink>}
-          {/* <NavLink to="/login">Login</NavLink>
-          <NavLink to="/register">Register</NavLink> */}
-        </nav>
-        {isLoggedIn ? <UserMenu/> : <AuthNav/>}
-        {/* <UserMenu/> */}
-        
-      </header>
+    <>
+      <Box as='header'>
+        <Container maxW="container.lg" >
+          <Flex justifyContent='space-between' alignItems='center'>
+            <nav>
+              <NavLink to="/">Home</NavLink>
+              {isLoggedIn && <NavLink to="/contacts">Contacts</NavLink>}
+            </nav>
+            {isLoggedIn ? <UserMenu/> : <AuthNav/>}
+          </Flex>
+        </Container>
+      </Box>
       <Toaster />
       <Suspense fallback={<Loader/>}>
-        <Outlet />
+        <Box as='main'>
+          <Container maxW="container.lg">
+            <Outlet />
+          </Container>
+        </Box>
       </Suspense>
-    </Container>
+      <Box as='footer'>
+        <Container maxW="container.lg">
+          <Center bg='gray.200' h='40px' color='white'>
+            by Shlov
+          </Center>
+        </Container>
+      </Box>
+    </>
   )
 }

@@ -1,4 +1,4 @@
-import { Button } from "components/ListContacts/ListContacts.styled";
+import { Button } from '../components/Button/Button';
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { useDispatch } from "react-redux";
 import { logIn } from "Redux/auth/operation";
@@ -16,7 +16,6 @@ export const Login = () => {
 
   const dispatch = useDispatch();
   const handleSubmit = (value, {resetForm}) => {
-    console.log(value)
     dispatch(logIn(value))
     resetForm()
   }

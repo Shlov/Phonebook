@@ -1,4 +1,4 @@
-import { Button } from "components/ListContacts/ListContacts.styled";
+import { Button } from '../Button/Button';
 import { useEffect, useState } from "react";
 import { Input , Label, Form} from "./FormContact.styled";
 // import PropTypes from 'prop-types';

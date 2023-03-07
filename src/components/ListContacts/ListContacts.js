@@ -1,8 +1,9 @@
 import { deleteContact } from "Redux/contacts/operations";
-import { getContacts, getFilter, getIsLoading } from "Redux/contacts/selectors"
-import { useDispatch, useSelector } from "react-redux"
-import { Button, Item, List } from "./ListContacts.styled"
+import { getContacts, getFilter, getIsLoading } from "Redux/contacts/selectors";
+import { useDispatch, useSelector } from "react-redux";
+import { Item, List } from "./ListContacts.styled";
 import { Loader } from "components/Loader/Loader";
+import { Button} from '../Button/Button';
 
 export const ListContacts = ({onEdit}) => {
 

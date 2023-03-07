@@ -1,4 +1,4 @@
-import { Button } from "components/ListContacts/ListContacts.styled";
+import { Button } from '../components/Button/Button';
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { useDispatch } from "react-redux";
 import { register } from "Redux/auth/operation";
