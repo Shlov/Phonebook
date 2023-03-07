@@ -1,7 +1,7 @@
 // import { Flex } from "@chakra-ui/react";
 import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
-import { Breadcrumb,  BreadcrumbItem,  BreadcrumbLink,  BreadcrumbSeparator,} from '@chakra-ui/react'
+import { Breadcrumb,  BreadcrumbItem,  BreadcrumbLink } from '@chakra-ui/react'
 
 export const AuthNav = () => {
 
