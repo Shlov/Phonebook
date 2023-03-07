@@ -5,7 +5,8 @@ import { SearchContact } from "../components/SearchContact/SearchContact";
 import { useEffect, useState } from "react";
 import { fatchContacts } from "Redux/contacts/operations";
 import { useDispatch } from "react-redux";
-import { Divider, Heading } from "@chakra-ui/react";
+import { Heading } from "@chakra-ui/react";
+// import { Divider, Heading } from "@chakra-ui/react";
 
 export const Contacts = () => {
 
@@ -20,7 +21,6 @@ export const Contacts = () => {
 
   return (
     <>
-      {/* <h2>Contacts</h2> */}
       <div>
         <Heading size='xl'>Phonebook</Heading> 
         {/* <Divider /> */}

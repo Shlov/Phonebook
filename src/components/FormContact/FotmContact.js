@@ -1,7 +1,6 @@
 import { Button } from '../Button/Button';
 import { useEffect, useState } from "react";
-import { Input , Label, Form} from "./FormContact.styled";
-// import PropTypes from 'prop-types';
+import { Input , Form} from "./FormContact.styled";
 import { useDispatch, useSelector } from "react-redux";
 import { addContact, replaceContact } from "Redux/contacts/operations";
 import { getContacts } from "Redux/contacts/selectors";
@@ -66,41 +65,39 @@ export const FormContact = ({editedSt, onEdit}) => {
   }
 
   return (
-    // <Flex as='Form' alignItems='center' action="" onSubmit = {(e) => transferContact(e)}>
-      <Card>
+    <Card>
       <CardBody>
-    <Form action="" onSubmit = {(e) => transferContact(e)}>
-      <Flex as='label' alignItems='center'>
-        <Text>Name</Text>
-        <Input
-        onChange = {(e) => recordName(e)}
-        type="text"
-        name="name"
-        value={nameNewContact}
-        pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-        title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-        required
-        />
-      </Flex>
-      <Flex as='label' alignItems='center'>
-        Number
-        <Input
-          onChange = {(e) => recordNumber(e)}
-          type="tel"
-          name="number"
-          value={numberNewContact}
-          pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-          title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
-          required
-          />
-      </Flex>
-      <Button type="submit" >
-        {editedSt ? 'Edit contact' : 'Add contact'}
-      </Button>
-    </Form>
-    </CardBody>
-</Card>
-    // </Flex>
+        <Form action="" onSubmit = {(e) => transferContact(e)}>
+          <Flex as='label' alignItems='center'>
+            <Text>Name</Text>
+            <Input
+            onChange = {(e) => recordName(e)}
+            type="text"
+            name="name"
+            value={nameNewContact}
+            pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+            title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
+            required
+            />
+          </Flex>
+          <Flex as='label' alignItems='center'>
+            Number
+            <Input
+              onChange = {(e) => recordNumber(e)}
+              type="tel"
+              name="number"
+              value={numberNewContact}
+              pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
+              title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
+              required
+              />
+          </Flex>
+          <Button type="submit" >
+            {editedSt ? 'Edit contact' : 'Add contact'}
+          </Button>
+        </Form>
+      </CardBody>
+    </Card>
   )
 }
 
