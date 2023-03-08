@@ -15,7 +15,7 @@ export const AuthNav = () => {
     //   <NavLink to="/login">Login</NavLink>
     //   <NavLink to="/register">Register</NavLink>
     // </Flex>
-  <Breadcrumb separator='(≖_≖ )'>
+  <Breadcrumb separator={location.pathname === '/login' ? '(≖_≖ )' : '( ≖_≖)'}>
     <BreadcrumbItem  isCurrentPage={location.pathname === '/login'} >
       <BreadcrumbLink as={Link} to='/login'>
         <Text fontSize='xl'>Login</Text>

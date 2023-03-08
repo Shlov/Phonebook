@@ -17,7 +17,9 @@ export const Contacts = () => {
   }
 
   const dispatch = useDispatch()
-  useEffect(() => {dispatch(fatchContacts())},[dispatch])
+  useEffect(() => {
+    dispatch(fatchContacts())
+  },[dispatch])
 
   return (
     <>
