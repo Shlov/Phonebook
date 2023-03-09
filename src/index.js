@@ -9,6 +9,7 @@ import { PersistGate } from 'redux-persist/integration/react'
 import { persistor } from 'Redux/store'
 // import { ChakraProvider } from '@chakra-ui/react';
 import { ChakraProvider, extendTheme } from '@chakra-ui/react';
+import { ColorModeScript } from '@chakra-ui/react'
 
 // const colors = {
 //   purple: {
@@ -107,6 +108,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
           <BrowserRouter basename="/goit-react-hw-08-phonebook">
+            <ColorModeScript initialColorMode={theme.config.initialColorMode} />
             <App />
           </BrowserRouter>
         </PersistGate>

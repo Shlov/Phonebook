@@ -24,11 +24,11 @@ export const Contacts = () => {
   return (
     <>
       <div>
-        <Heading size='xl'>Phonebook</Heading> 
+        <Heading size='xl' p='12px'>Phonebook</Heading> 
         {/* <Divider /> */}
         <FormContact editedSt={isEditedSt} onEdit={newEditContact}/>
         {/* <Divider /> */}
-        <Heading size='lg'>Contacts</Heading>
+        <Heading size='lg' p='8px'>Contacts</Heading>
         <SearchContact />
         <ListContacts onEdit={newEditContact}/>
       </div>

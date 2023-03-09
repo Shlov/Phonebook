@@ -3,12 +3,12 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import { useDispatch } from "react-redux";
 import { register } from "Redux/auth/operation";
 import * as Yup from 'yup';
+import { Heading } from '@chakra-ui/react';
 
 const schema = Yup.object().shape({
   name: Yup.string().min(3).max(16).required(),
   email: Yup.string().email().required(),
   password: Yup.string().min(6).max(32).required()
-
 })
 
 export const Register = () => {
@@ -23,7 +23,7 @@ export const Register = () => {
 
   return (
     <>
-      <h1>Register</h1>
+      <Heading size='lg' p='8px'>Register</Heading>
       <Formik initialValues={initialValues} validationSchema={schema} onSubmit={handleSubmit}>
         <Form>
           <label>
@@ -45,6 +45,5 @@ export const Register = () => {
         </Form>
       </Formik>
     </>
-
   )
 }

@@ -2,13 +2,15 @@ import { Loader } from "components/Loader/Loader";
 import { Suspense } from "react";
 import { Toaster } from "react-hot-toast";
 import { Link, Outlet, useLocation } from "react-router-dom";
-import { Box, Container, Center, Breadcrumb,  BreadcrumbItem,  BreadcrumbLink, Text } from "@chakra-ui/react";
+import { Box, Container, Center, Breadcrumb,  BreadcrumbItem,  BreadcrumbLink, Text, Flex } from "@chakra-ui/react";
 import { UserMenu } from "components/UserMenu/UserMenu";
 import { AuthNav } from "components/AuthNav/AuthNav";
 import { useSelector } from "react-redux";
 import { selectIsLoggedIn } from "Redux/auth/selector";
+import { ColorModeSwitcher } from '../ColorModeSwitcher';
 
 export const Layout = () => {
+  // const { colorMode, toggleColorMode } = useColorMode();
 
   const isLoggedIn = useSelector(selectIsLoggedIn);
   const location = useLocation();
@@ -34,7 +36,10 @@ export const Layout = () => {
               <NavLink to="/">Home</NavLink>
               {isLoggedIn && <NavLink to="/contacts">Contacts</NavLink>}
             </nav> */}
-            {isLoggedIn ? <UserMenu/> : <AuthNav/>}
+            <Flex alignItems='Center' gap='20px'>
+              <ColorModeSwitcher/>
+              {isLoggedIn ? <UserMenu/> : <AuthNav/>}
+            </Flex>
 
         </Container>
       </Box>
@@ -53,6 +58,9 @@ export const Layout = () => {
           </Center>
         </Container>
       </Box>
+      {/* <Button onClick={toggleColorMode}>
+        Toggle {colorMode === 'light' ? 'Dark' : 'Light'}
+      </Button> */}
     </>
   )
 }

@@ -4,15 +4,14 @@ import { useDispatch } from "react-redux";
 import { logIn } from "Redux/auth/operation";
 
 import * as Yup from 'yup';
+import { Heading } from '@chakra-ui/react';
 
 const schema = Yup.object().shape({
   email: Yup.string().email().required(),
   password: Yup.string().min(6).max(32).required()
-
 })
 
 export const Login = () => {
-
 
   const dispatch = useDispatch();
   const handleSubmit = (value, {resetForm}) => {
@@ -24,8 +23,8 @@ export const Login = () => {
 
   return (
     <>
-    <h1>Login</h1>
-    <Formik initialValues={initialValues} validationSchema={schema} onSubmit={handleSubmit}>
+      <Heading size='lg' p='8px'>Login</Heading>
+      <Formik initialValues={initialValues} validationSchema={schema} onSubmit={handleSubmit}>
         <Form>
           <label>
             Email
@@ -40,6 +39,6 @@ export const Login = () => {
           <Button type="submit">Login</Button>
         </Form>
       </Formik>
-      </>
+    </>
   )
 }
