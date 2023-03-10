@@ -29,9 +29,6 @@ export const App = () => {
     (<Routes>
     <Route path="/" element={<Layout/>}>
       <Route index element={<Home />}/>
-      {/* <PrivateRoute path="/contacts">
-        <Contacts/>
-      </PrivateRoute> */}
       <Route path="/contacts" element={
         <PrivateRoute redirectTo="/login" component={<Contacts/>}/>
       }/>

@@ -2,7 +2,7 @@ import { Loader } from "components/Loader/Loader";
 import { Suspense } from "react";
 import { Toaster } from "react-hot-toast";
 import { Link, Outlet, useLocation } from "react-router-dom";
-import { Box, Container, Center, Breadcrumb,  BreadcrumbItem,  BreadcrumbLink, Text, Flex } from "@chakra-ui/react";
+import { Box, Container, Center, Breadcrumb,  BreadcrumbItem,  BreadcrumbLink, Text, Flex, useColorModeValue } from "@chakra-ui/react";
 import { UserMenu } from "components/UserMenu/UserMenu";
 import { AuthNav } from "components/AuthNav/AuthNav";
 import { useSelector } from "react-redux";
@@ -14,11 +14,13 @@ export const Layout = () => {
 
   const isLoggedIn = useSelector(selectIsLoggedIn);
   const location = useLocation();
+  const bgHeader = useColorModeValue('purple.50', 'gray.700')
+  const bgFooter = useColorModeValue('gray.200', 'gray.700')
 
   return (
-    <>
+    <Flex minHeight='100vh' flexDirection='column'>
       <Box as='header'>
-        <Container maxW="container.lg" bg='purple.50' h='60px' display='flex' justifyContent='space-between' alignItems='center'>
+        <Container maxW="container.lg" bg={bgHeader} h='60px' display='flex' justifyContent='space-between' alignItems='center'>
           <Breadcrumb separator='👽'>
             <BreadcrumbItem  isCurrentPage={location.pathname === '/'} >
               <BreadcrumbLink as={Link} to='/'>
@@ -45,15 +47,15 @@ export const Layout = () => {
       </Box>
       <Toaster />
       <Suspense fallback={<Loader/>}>
-        <Box as='main'>
-          <Container maxW="container.lg">
+        <Flex as='main' flex='1 1 auto'>
+          <Container maxW="container.lg" display='flex' flexDirection='column' alignItems='center' gap='20px'>
             <Outlet />
           </Container>
-        </Box>
+        </Flex>
       </Suspense>
       <Box as='footer'>
         <Container maxW="container.lg">
-          <Center bg='gray.200' h='40px' color='white'>
+          <Center bg={bgFooter} h='40px' color='white'>
             by Shlov  ʕ·͡ᴥ·ʔ
           </Center>
         </Container>
@@ -61,6 +63,6 @@ export const Layout = () => {
       {/* <Button onClick={toggleColorMode}>
         Toggle {colorMode === 'light' ? 'Dark' : 'Light'}
       </Button> */}
-    </>
+    </Flex>
   )
 }

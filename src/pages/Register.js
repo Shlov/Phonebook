@@ -9,17 +9,16 @@ const schema = Yup.object().shape({
   name: Yup.string().min(3).max(16).required(),
   email: Yup.string().email().required(),
   password: Yup.string().min(6).max(32).required()
-})
+});
 
 export const Register = () => {
   const dispatch = useDispatch();
   const handleSubmit = (value, {resetForm}) => {
-    console.log(value)
-    dispatch(register(value))
-    resetForm()
-  }
+    dispatch(register(value));
+    resetForm();
+  };
 
-  const initialValues = {name:'', email: '', password: ''}
+  const initialValues = {name:'', email: '', password: ''};
 
   return (
     <>
@@ -46,4 +45,4 @@ export const Register = () => {
       </Formik>
     </>
   )
-}
+};

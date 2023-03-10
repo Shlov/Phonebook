@@ -1,15 +1,11 @@
-import { IconButton, Tooltip, useColorMode } from "@chakra-ui/react"
+import { IconButton, Tooltip, useColorMode } from "@chakra-ui/react";
 import { MoonIcon, SunIcon } from "@chakra-ui/icons";
-
-
-
 
 export const ColorModeSwitcher = () => {
 
   const { colorMode, toggleColorMode } = useColorMode();
 
   return(
-
     <Tooltip label='ColorModeSwitcher' placement='left'>
       <IconButton
           rounded="full"
@@ -19,6 +15,5 @@ export const ColorModeSwitcher = () => {
           icon={colorMode === "light" ? <MoonIcon /> : <SunIcon />}
         />
     </Tooltip>
-    
   )
-}
+};
