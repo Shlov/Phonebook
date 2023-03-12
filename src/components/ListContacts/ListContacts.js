@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 // import { Item, List } from "./ListContacts.styled";
 // import { Loader } from "components/Loader/Loader";
 import { Button} from '../Button/Button';
-import { Table, Tbody, Tr, Td, TableContainer, Center, Avatar, Text, Stack, Skeleton, Container, } from '@chakra-ui/react'
+import { Table, Tbody, Tr, Td, TableContainer, Center, Avatar, Text, Stack, Skeleton, SkeletonCircle, Flex, Divider } from '@chakra-ui/react'
 
 export const ListContacts = ({onEdit}) => {
 
@@ -18,11 +18,27 @@ export const ListContacts = ({onEdit}) => {
   return (
     <>
       { isLoading 
-        ? <Stack p='12px'>
-            <Skeleton height='55px' />
-            <Skeleton height='55px' />
-            <Skeleton height='55px' />
-            <Skeleton height='55px' />
+        ? <Stack p='12px' w='680px'display='flex' alignItems='center' marginLeft='auto' marginRight='auto' p='12px 0px'>
+              <Flex flexDirection='row' w='100%' alignItems='center' gap='28px' p='0px 16px'>
+                <SkeletonCircle w='38px' h='38px' />
+                <Skeleton height='40px' w='580px'/>
+              </Flex>
+            <Divider/>
+              <Flex flexDirection='row' w='100%' alignItems='center' gap='28px' p='0px 16px'>
+                <SkeletonCircle w='38px' h='38px' />
+                <Skeleton height='40px' w='580px'/>
+              </Flex>
+            <Divider/>
+              <Flex flexDirection='row' w='100%' alignItems='center' gap='28px' p='0px 16px'>
+                <SkeletonCircle w='38px' h='38px' />
+                <Skeleton height='40px' w='580px'/>
+              </Flex>
+            <Divider/>
+              <Flex flexDirection='row' w='100%' alignItems='center' gap='28px' p='0px 16px'>
+                <SkeletonCircle w='38px' h='38px' />
+                <Skeleton height='40px' w='580px'/>
+              </Flex>
+            <Divider/>
           </Stack>
         : <Center p='12px'>
             <TableContainer maxWidth='100%'>
@@ -31,7 +47,7 @@ export const ListContacts = ({onEdit}) => {
                   {contacts.map(contact =>
                   <Tr key = {contact.id}>
                     <Td>
-                      <Avatar name={contact.name} bg='purple.700' size='sm' color='gray.50' />
+                      <Avatar name={contact.name} bg='purple.700' w='38px' h='38px' color='gray.50' />
                     </Td>
                     <Td >
                       <Text fontSize='xl'>{contact.name}</Text>

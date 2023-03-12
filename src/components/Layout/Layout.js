@@ -48,7 +48,7 @@ export const Layout = () => {
       <Toaster />
       <Suspense fallback={<Loader/>}>
         <Flex as='main' flex='1 1 auto'>
-          <Container maxW="container.lg" display='flex' flexDirection='column' alignItems='center' gap='20px'>
+          <Container maxW="container.lg" display='flex' flexDirection='column' alignItems='center' gap='20px' justifyContent='center'>
             <Outlet />
           </Container>
         </Flex>
