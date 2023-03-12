@@ -18,7 +18,7 @@ export const ListContacts = ({onEdit}) => {
   return (
     <>
       { isLoading 
-        ? <Stack p='12px' w='680px'display='flex' alignItems='center' marginLeft='auto' marginRight='auto' p='12px 0px'>
+        ? <Stack w='680px'display='flex' alignItems='center' marginLeft='auto' marginRight='auto' p='12px 0px'>
               <Flex flexDirection='row' w='100%' alignItems='center' gap='28px' p='0px 16px'>
                 <SkeletonCircle w='38px' h='38px' />
                 <Skeleton height='40px' w='580px'/>
