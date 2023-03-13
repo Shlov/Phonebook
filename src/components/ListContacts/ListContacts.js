@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Button} from '../Button/Button';
 import { Table, Tbody, Tr, Td, TableContainer, Center, Avatar, Text, Stack, Skeleton, SkeletonCircle, Flex, Divider } from '@chakra-ui/react'
 
-export const ListContacts = ({onEdit}) => {
+export const ListContacts = ({onEdit, onEditable}) => {
 
   const contactsState = useSelector(getContacts).items;
   const filter = useSelector(getFilter).query;
@@ -55,8 +55,11 @@ export const ListContacts = ({onEdit}) => {
                     <Td>
                       <Text fontSize='xl'>{contact.number}</Text> 
                     </Td>
-                    <Td isNumeric>
-                      <Button onClick = {() => onEdit(contact)}>Edit</Button>
+                    <Td isNumeric w='300px'>
+                      {onEditable && onEditable.id === contact.id 
+                      ? <Button onClick = {() => onEdit(null)}>Cancel</Button>
+                      : <Button onClick = {() => onEdit(contact)}>Edit</Button>
+                      }
                       <Button onClick = {() => dispatch(deleteContact(contact.id))}>Delete</Button>
                     </Td>
                   </Tr>)}

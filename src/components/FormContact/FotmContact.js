@@ -33,13 +33,22 @@ export const FormContact = ({editedSt, onEdit}) => {
     if (editedSt) {
       setNumberNewContact(editedSt.number)
     }
-},[editedSt]);
+  },[editedSt]);
 
   const resetForm = () => {
     onEdit(null)
     setNameNewContact('')
     setNumberNewContact('')
   }
+
+
+  useEffect(()=>{
+    if (! editedSt) {
+      setNameNewContact('')
+      setNumberNewContact('')
+    }
+},[editedSt]);
+
 
   const transferContact = (evnt) => {
     evnt.preventDefault();

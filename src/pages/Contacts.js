@@ -10,10 +10,10 @@ import { Heading } from "@chakra-ui/react";
 
 export const Contacts = () => {
 
-  const [isEditedSt, setIsEditedSt] = useState(null);
+  const [isEdited, setIsEdited] = useState(null);
 
   const newEditContact = (contact) => {
-    setIsEditedSt(contact)
+    setIsEdited(contact)
   }
 
   const dispatch = useDispatch()
@@ -26,11 +26,11 @@ export const Contacts = () => {
       <div>
         <Heading size='xl' p='12px'>Phonebook</Heading> 
         {/* <Divider /> */}
-        <FormContact editedSt={isEditedSt} onEdit={newEditContact}/>
+        <FormContact editedSt={isEdited} onEdit={newEditContact}/>
         {/* <Divider /> */}
         <Heading size='lg' p='8px'>Contacts</Heading>
         <SearchContact />
-        <ListContacts onEdit={newEditContact}/>
+        <ListContacts onEdit={newEditContact} onEditable={isEdited}/>
       </div>
     </>    
   )
