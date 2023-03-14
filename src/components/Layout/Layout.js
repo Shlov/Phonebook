@@ -34,21 +34,16 @@ export const Layout = () => {
               </BreadcrumbLink>
             </BreadcrumbItem>}
           </Breadcrumb>
-            {/* <nav>
-              <NavLink to="/">Home</NavLink>
-              {isLoggedIn && <NavLink to="/contacts">Contacts</NavLink>}
-            </nav> */}
-            <Flex alignItems='Center' gap='20px'>
-              <ColorModeSwitcher/>
-              {isLoggedIn ? <UserMenu/> : <AuthNav/>}
-            </Flex>
-
+          <Flex alignItems='Center' gap='20px'>
+            <ColorModeSwitcher/>
+            {isLoggedIn ? <UserMenu/> : <AuthNav/>}
+          </Flex>
         </Container>
       </Box>
       <Toaster />
       <Suspense fallback={<Loader/>}>
         <Flex as='main' flex='1 1 auto'>
-          <Container maxW="container.lg" display='flex' flexDirection='column' alignItems='center' gap='20px' justifyContent='center'>
+          <Container maxW="container.lg" display='flex'  gap='20px' justifyContent='center'>
             <Outlet />
           </Container>
         </Flex>
@@ -60,9 +55,6 @@ export const Layout = () => {
           </Center>
         </Container>
       </Box>
-      {/* <Button onClick={toggleColorMode}>
-        Toggle {colorMode === 'light' ? 'Dark' : 'Light'}
-      </Button> */}
     </Flex>
   )
 }

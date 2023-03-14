@@ -14,7 +14,7 @@ export const UserMenu = () => {
   const user = useSelector(selectUser);
 
   return (
-    <Flex as='nav' alignItems='center'>
+    <Flex as='nav' alignItems='center' gap='20px'>
       <Text fontSize='xl'>Hello, {user.name} ✌(•◡•)</Text>
       <Button onClick={()=>dispatch(logOut())}>Logout</Button>
     </Flex>

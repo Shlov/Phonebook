@@ -5,7 +5,7 @@ import { SearchContact } from "../components/SearchContact/SearchContact";
 import { useEffect, useState } from "react";
 import { fatchContacts } from "Redux/contacts/operations";
 import { useDispatch } from "react-redux";
-import { Heading } from "@chakra-ui/react";
+import { Flex, Heading } from "@chakra-ui/react";
 // import { Divider, Heading } from "@chakra-ui/react";
 
 export const Contacts = () => {
@@ -23,7 +23,7 @@ export const Contacts = () => {
 
   return (
     <>
-      <div>
+      <Flex flexDirection='column' >
         <Heading size='xl' p='12px'>Phonebook</Heading> 
         {/* <Divider /> */}
         <FormContact editedSt={isEdited} onEdit={newEditContact}/>
@@ -31,7 +31,7 @@ export const Contacts = () => {
         <Heading size='lg' p='8px'>Contacts</Heading>
         <SearchContact />
         <ListContacts onEdit={newEditContact} onEditable={isEdited}/>
-      </div>
+      </Flex>
     </>    
   )
 };

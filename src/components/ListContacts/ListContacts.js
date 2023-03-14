@@ -47,7 +47,7 @@ export const ListContacts = ({onEdit, onEditable}) => {
                   {contacts.map(contact =>
                   <Tr key = {contact.id}>
                     <Td>
-                      <Avatar name={contact.name} bg='purple.700' w='38px' h='38px' color='gray.50' />
+                      <Avatar name={contact.name} bg='#aa3bb1' w='38px' h='38px' color='gray.50' />
                     </Td>
                     <Td >
                       <Text fontSize='xl'>{contact.name}</Text>
@@ -55,7 +55,7 @@ export const ListContacts = ({onEdit, onEditable}) => {
                     <Td>
                       <Text fontSize='xl'>{contact.number}</Text> 
                     </Td>
-                    <Td isNumeric w='300px'>
+                    <Td isNumeric w='300px' display='flex' gap='16px' justifyContent='flex-end'>
                       {onEditable && onEditable.id === contact.id 
                       ? <Button onClick = {() => onEdit(null)}>Cancel</Button>
                       : <Button onClick = {() => onEdit(contact)}>Edit</Button>

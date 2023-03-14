@@ -1,7 +1,7 @@
 
 .btn {
   padding: 0.6em 1.8em;
-  border: 2px solid #8707ff;
+  border: 2px solid #aa3bb1;
   border-radius: 10px;
   position: relative;
   overflow: hidden;
@@ -13,8 +13,7 @@
   transition: .3s;
   z-index: 1;
   font-family: inherit;
-  color: #8707ff;
-  margin-left: 24px;
+  color: #aa3bb1;
 }
 
 .btn:hover::before {
@@ -33,7 +32,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) rotate(45deg);
-  background: #8707ff;
+  background: #aa3bb1;
   transition: .5s ease;
   display: block;
   z-index: -1;
