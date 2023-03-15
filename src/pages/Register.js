@@ -1,5 +1,5 @@
 import { Button } from '../components/Button/Button';
-import { Formik, Form, Field, ErrorMessage } from "formik";
+import { Formik, Form, ErrorMessage } from "formik";
 import { useDispatch } from "react-redux";
 import { register } from "Redux/auth/operation";
 import * as Yup from 'yup';
@@ -27,21 +27,15 @@ export const Register = () => {
       <Formik initialValues={initialValues} validationSchema={schema} onSubmit={handleSubmit}>
         <Form>
         <Center flexDirection='column' gap='12px'>
-          <label>
             {/* Name */}
             <Input type = 'text' name = 'name' placeholder='Name'/>
             <ErrorMessage component="div" name='name'/>
-          </label>
-          <label>
             {/* Email */}
             <Input type = 'email' name = 'email' placeholder='Email'/>
             <ErrorMessage component="div" name='email'/>
-          </label>
-          <label>
             {/* Password */}
             <Input type = 'password' name = 'password' placeholder='Password'/>
             <ErrorMessage component="div" name='password'/>
-          </label>
           <Button type="submit">Register</Button>
           </Center>
         </Form>
