@@ -7,26 +7,9 @@ import { store } from 'Redux/store';
 import { BrowserRouter } from 'react-router-dom';
 import { PersistGate } from 'redux-persist/integration/react'
 import { persistor } from 'Redux/store'
-// import { ChakraProvider } from '@chakra-ui/react';
 import { ChakraProvider, extendTheme } from '@chakra-ui/react';
 import { ColorModeScript } from '@chakra-ui/react'
 
-// const colors = {
-//   purple: {
-//     50: '#fae3ff',
-//     100: '#e3b2ff',
-//     200: '#ca7fff',
-//     300: '#ae4cff',
-//     400: '#901aff',
-//     500: '#8500e6',
-//     600: '#7400b4',
-//     700: '#5c0082',
-//     800: '#3c0050',
-//     900: '#1a0020',
-//   },
-// }
-
-// const theme = extendTheme({ colors })
 
 const theme = extendTheme({
   colors: {
