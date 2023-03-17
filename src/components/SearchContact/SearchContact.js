@@ -12,18 +12,14 @@ export const SearchContact = () => {
   return (
     <Card>
       <CardBody>
-  <Flex as={Label} alignItems='center'>
-    {/* <Label htmlFor=""> */}
-    <Text fontSize='2xl' as='b'>Find contacts by name</Text>
-      
-      <Input
-        onChange={(evnt) => {dispatch(setFilter(evnt.target.value))}}
-        type="text" 
-        />
-    {/* </Label> */}
-    </Flex>
-  </CardBody>
-</Card>
-
+      <Flex as={Label} alignItems='center'>
+        <Text fontSize='2xl' as='b'>Find contacts by name</Text>
+        <Input
+          onChange={(evnt) => {dispatch(setFilter(evnt.target.value))}}
+          type="text" 
+          />
+        </Flex>
+      </CardBody>
+    </Card>
   )
 }

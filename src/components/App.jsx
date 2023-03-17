@@ -1,4 +1,3 @@
-
 import "@fontsource/rajdhani";
 import { useEffect } from "react";
 // import { fatchContacts } from "Redux/operations";
@@ -15,8 +14,6 @@ import { RestrictedRoute } from "./RestrictedRoute";
 import { selectIsRefreshing } from "Redux/auth/selector";
 
 
-
-
 export const App = () => {
 
   const dispatch = useDispatch()
@@ -27,19 +24,19 @@ export const App = () => {
   return (
     isRefreshing ? (<p> Refreshing user... </p>) :
     (<Routes>
-    <Route path="/" element={<Layout/>}>
-      <Route index element={<Home />}/>
-      <Route path="/contacts" element={
-        <PrivateRoute redirectTo="/login" component={<Contacts/>}/>
-      }/>
-      <Route path="/login" element={
-        <RestrictedRoute redirectTo="/contacts" component={<Login/>}/>
-      }/>
-      <Route path="/register" element={
-        <RestrictedRoute redirectTo="/contacts" component={<Register/>}/>
-      }/>
-    </Route>
-  </Routes>)
+      <Route path="/" element={<Layout/>}>
+        <Route index element={<Home />}/>
+        <Route path="/contacts" element={
+          <PrivateRoute redirectTo="/login" component={<Contacts/>}/>
+        }/>
+        <Route path="/login" element={
+          <RestrictedRoute redirectTo="/contacts" component={<Login/>}/>
+        }/>
+        <Route path="/register" element={
+          <RestrictedRoute redirectTo="/contacts" component={<Register/>}/>
+        }/>
+      </Route>
+    </Routes>)
     
   );
 }

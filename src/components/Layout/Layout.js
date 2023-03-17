@@ -10,7 +10,6 @@ import { selectIsLoggedIn } from "Redux/auth/selector";
 import { ColorModeSwitcher } from '../ColorModeSwitcher';
 
 export const Layout = () => {
-  // const { colorMode, toggleColorMode } = useColorMode();
 
   const isLoggedIn = useSelector(selectIsLoggedIn);
   const location = useLocation();

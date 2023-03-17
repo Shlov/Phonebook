@@ -2,7 +2,6 @@ import { Button } from '../components/Button/Button';
 import { Formik, Form, } from "formik";
 import { useDispatch } from "react-redux";
 import { logIn } from "Redux/auth/operation";
-
 import * as Yup from 'yup';
 import { Heading, Flex, Center } from '@chakra-ui/react';
 import { Input } from 'components/Input/Input.styled';

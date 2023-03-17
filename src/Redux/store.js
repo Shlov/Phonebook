@@ -1,4 +1,3 @@
-
 import { configureStore } from "@reduxjs/toolkit";
 import { authReducer } from "./auth/slice";
 import { contactsReducer } from "./contacts/contactsSlice";
@@ -22,8 +21,6 @@ const authPersistConfig = {
 };
 
 const persistedAuthReducer = persistReducer(authPersistConfig, authReducer);
-
-
 
 export const store = configureStore({
   reducer: {

@@ -5,10 +5,7 @@ import { Breadcrumb,  BreadcrumbItem,  BreadcrumbLink, Text } from '@chakra-ui/r
 
 export const AuthNav = () => {
 
-  // isCurrentPage
-
   const location = useLocation();
-  // console.log('loc', location.pathname)
 
   return (
     // <Flex as='nav' >
@@ -27,6 +24,5 @@ export const AuthNav = () => {
       </BreadcrumbLink>
     </BreadcrumbItem>
   </Breadcrumb>
-
   )
 }

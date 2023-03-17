@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-
 export const Button = styled.button`
   padding: 0.8em 1.8em;
   border: 2px solid #8707ff;
