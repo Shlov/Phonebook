@@ -1,5 +1,8 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+import { createStandaloneToast } from '@chakra-ui/toast'
+
+const { toast } = createStandaloneToast()
 
 const setAuthHeader = token => {
   axios.defaults.headers.common.Authorization = `Bearer ${token}`;
@@ -28,6 +31,14 @@ export const logIn = createAsyncThunk('auth/login',
     try {
       const response = await axios.post('/users/login', credentials);
       setAuthHeader(response.data.token);
+      toast({
+        title: `Hello ${response.data.user.name}   👋 (●◡●) 🔓 `,
+        description: '',
+        status: 'success',
+        duration: 2000,
+        isClosable: true,
+        position: 'top',
+      })
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
@@ -40,6 +51,14 @@ export const logOut = createAsyncThunk('auth/logout',
     try {
       await axios.post('/users/logout');
       clearAuthHeader();
+      toast({
+        title: 'Goodbye  (●__●💧)  🔒',
+        description: '',
+        status: 'success',
+        duration: 2000,
+        isClosable: true,
+        position: 'top',
+      })
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }

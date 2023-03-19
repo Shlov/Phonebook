@@ -24,24 +24,12 @@ export const Login = () => {
     resetForm();
   }
 
-  if (!isLoggedIn) {
-    toast({
-      title: 'Authorization error (◑_◑)🤚',
-      description: 'Сheck your login or password (ㆆ_ㆆ)  ',
-      status: 'error',
-      duration: 9000,
-      isClosable: true,
-      position: 'top',
-    })
-  }
-
-
   // useEffect(() => {
   //   if (!isLoggedIn) {
   //     toast({
-  //       title: 'Hello',
-  //       description: ' ( ◔‿◔)👌',
-  //       status: 'success',
+  //       title: 'Authorization error (◑_◑)🤚',
+  //       description: 'Сheck your login or password (ㆆ_ㆆ)  ',
+  //       status: 'error',
   //       duration: 9000,
   //       isClosable: true,
   //       position: 'top',
