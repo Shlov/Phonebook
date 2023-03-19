@@ -1,12 +1,10 @@
 import { Button } from '../components/Button/Button';
 import { Formik, Form, } from "formik";
-import { useDispatch, useSelector } from "react-redux";
-import { selectIsLoggedIn } from "Redux/auth/selector";
+import { useDispatch } from "react-redux";
 import { logIn } from "Redux/auth/operation";
 import * as Yup from 'yup';
-import { Heading, Flex, Center, useToast } from '@chakra-ui/react';
+import { Heading, Flex, Center } from '@chakra-ui/react';
 import { Input } from 'components/Input/Input.styled';
-import { useEffect } from 'react';
 
 
 const schema = Yup.object().shape({
@@ -17,29 +15,10 @@ const schema = Yup.object().shape({
 export const Login = () => {
 
   const dispatch = useDispatch();
-  const toast = useToast();
-  const isLoggedIn = useSelector(selectIsLoggedIn);
   const handleSubmit = (value, {resetForm}) => {
     dispatch(logIn(value));
     resetForm();
   }
-
-  // useEffect(() => {
-  //   if (!isLoggedIn) {
-  //     toast({
-  //       title: 'Authorization error (◑_◑)🤚',
-  //       description: 'Сheck your login or password (ㆆ_ㆆ)  ',
-  //       status: 'error',
-  //       duration: 9000,
-  //       isClosable: true,
-  //       position: 'top',
-  //     })
-  //   }
-  // }
-    
-  // , [isLoggedIn, toast])
-
-  
 
   const initialValues = {email: '', password: ''}
 
