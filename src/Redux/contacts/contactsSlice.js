@@ -50,6 +50,7 @@ const contactsSlice = createSlice({
       state.isLoading = false;
       state.isEdited = false;
       state.error = null;
+
       // var 1
 
       // state.items = state.items.filter((item) => item.id !== action.meta.arg.id);
