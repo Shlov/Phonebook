@@ -17,12 +17,8 @@ axios.defaults.baseURL = 'http://localhost:8000';
 export const register = createAsyncThunk('auth/register',
   async (credentials, thunkAPI) => {
     try {
-      // console.log(credentials);
       const response = await axios.post('/users/signup', credentials);
-      // console.log(response);
       setAuthHeader(response.data.token);
-      // console.log(response.data);
-
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
