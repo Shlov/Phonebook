@@ -3,7 +3,7 @@ import { FormContact } from "../components/FormContact/FotmContact";
 import { ListContacts } from "../components/ListContacts/ListContacts";
 import { SearchContact } from "../components/SearchContact/SearchContact";
 import { useEffect, useState } from "react";
-import { fatchContacts } from "Redux/contacts/operations";
+import { fetchContacts } from "Redux/contacts/operations";
 import { useDispatch } from "react-redux";
 import { Flex, Heading } from "@chakra-ui/react";
 
@@ -17,7 +17,7 @@ export const Contacts = () => {
 
   const dispatch = useDispatch()
   useEffect(() => {
-    dispatch(fatchContacts())
+    dispatch(fetchContacts())
   },[dispatch])
 
   return (

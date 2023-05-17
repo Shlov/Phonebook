@@ -54,11 +54,11 @@ export const ListContacts = ({onEdit, onEditable}) => {
                       <Text fontSize='xl'>{contact.number}</Text> 
                     </Td>
                     <Td isNumeric w='300px' display='flex' gap='16px' justifyContent='flex-end'>
-                      {onEditable && onEditable.id === contact.id 
+                      {onEditable && onEditable.id === contact._id 
                       ? <Button onClick = {() => onEdit(null)}>Cancel</Button>
                       : <Button onClick = {() => onEdit(contact)}>Edit</Button>
                       }
-                      <Button onClick = {() => dispatch(deleteContact(contact.id))}>Delete</Button>
+                      <Button onClick = {() => dispatch(deleteContact(contact._id))}>Delete</Button>
                     </Td>
                   </Tr>)}
                 </Tbody>
